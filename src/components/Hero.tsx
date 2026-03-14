@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
+import ParticlesBackground from "./ParticlesBackground";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20">
-      <div className="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center">
+    <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+      <ParticlesBackground />
+      <div className="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -22,12 +24,16 @@ const Hero = () => {
             I am a passionate software developer who enjoys building scalable applications and solving real-world problems. I specialize in backend development and modern web technologies.
           </p>
           <div className="flex gap-4 flex-wrap">
-            <Button variant="hero" size="lg" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
-              <ArrowDown size={16} /> View Projects
-            </Button>
-            <Button variant="heroOutline" size="lg" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-              <Mail size={16} /> Contact Me
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <Button variant="hero" size="lg" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
+                <ArrowDown size={16} /> View Projects
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <Button variant="heroOutline" size="lg" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+                <Mail size={16} /> Contact Me
+              </Button>
+            </motion.div>
           </div>
         </motion.div>
 

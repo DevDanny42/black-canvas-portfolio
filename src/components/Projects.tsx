@@ -32,18 +32,21 @@ const ProjectCard = ({ title, description, tech, index }: typeof projects[0] & {
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      className="p-6 rounded-lg bg-card border border-border card-glow group"
+      whileHover={{ scale: 1.04, y: -5 }}
+      className="p-6 rounded-lg glass-card group"
     >
       <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-gradient transition-colors">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed mb-4">{description}</p>
       <div className="flex flex-wrap gap-2 mb-5">
         {tech.map((t) => (
-          <span key={t} className="px-2 py-1 text-xs rounded bg-secondary text-muted-foreground">{t}</span>
+          <span key={t} className="px-2 py-1 text-xs rounded bg-secondary/50 text-muted-foreground">{t}</span>
         ))}
       </div>
-      <Button variant="heroOutline" size="sm">
-        <ExternalLink size={14} /> GitHub
-      </Button>
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+        <Button variant="heroOutline" size="sm">
+          <ExternalLink size={14} /> GitHub
+        </Button>
+      </motion.div>
     </motion.div>
   );
 };
