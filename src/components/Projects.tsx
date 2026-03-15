@@ -1,7 +1,7 @@
 import SectionReveal from "./SectionReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Server, Code2, FileCode, Database, FileSpreadsheet, BrainCircuit, BarChart3 } from "lucide-react";
+import { ExternalLink, Globe, Server, Code2, FileCode, Database, FileSpreadsheet, BrainCircuit, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -29,22 +29,25 @@ const projects = [
     description: "A web-based application designed to manage garage operations including vehicle service tracking, billing, and customer management.",
     tech: ["React", "Node.js", "MySQL", "TypeScript"],
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    liveUrl: "#",
   },
   {
     title: "Bank Management App",
     description: "A simple application that stores and manages bank account data with features like add, search, delete, and download records in Excel.",
     tech: ["Node.js", "ExcelJS", "JavaScript"],
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    liveUrl: "#",
   },
   {
     title: "Machine Learning Model",
     description: "Developed a machine learning model to analyze data and predict outcomes using classification algorithms.",
     tech: ["Python", "Scikit-learn", "Pandas"],
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    liveUrl: "#",
   },
 ];
 
-const ProjectCard = ({ title, description, tech, videoUrl, index }: typeof projects[0] & { index: number }) => {
+const ProjectCard = ({ title, description, tech, videoUrl, liveUrl, index }: typeof projects[0] & { index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -98,11 +101,22 @@ const ProjectCard = ({ title, description, tech, videoUrl, index }: typeof proje
           Your browser does not support the video tag.
         </video>
       </div>
-      <motion.div className="mt-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-        <Button variant="heroOutline" size="sm">
-          <ExternalLink size={14} /> GitHub
-        </Button>
-      </motion.div>
+      <div className="mt-4 flex gap-3">
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <Button variant="heroOutline" size="sm" asChild>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <ExternalLink size={14} /> GitHub
+            </a>
+          </Button>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <Button variant="hero" size="sm" asChild>
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+              <Globe size={14} /> View Live
+            </a>
+          </Button>
+        </motion.div>
+      </div>
     </motion.div>
   );
 };

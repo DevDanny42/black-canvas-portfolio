@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SectionReveal from "./SectionReveal";
 import { Button } from "@/components/ui/button";
-import { Mail, Github, Linkedin, Send, Phone, Instagram, Code } from "lucide-react";
+import { Mail, Github, Linkedin, Send, Phone, Instagram, Code, Twitter } from "lucide-react";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -69,6 +69,10 @@ const Contact = () => {
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Code size={20} />
                 <a href="https://leetcode.com/dayeshlate" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">leetcode.com/dayeshlate</a>
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <Twitter size={20} />
+                <a href="https://twitter.com/dayeshlate" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">twitter.com/dayeshlate</a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Instagram size={20} />
