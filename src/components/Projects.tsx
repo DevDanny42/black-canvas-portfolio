@@ -101,11 +101,22 @@ const ProjectCard = ({ title, description, tech, videoUrl, liveUrl, index }: typ
           Your browser does not support the video tag.
         </video>
       </div>
-      <motion.div className="mt-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-        <Button variant="heroOutline" size="sm">
-          <ExternalLink size={14} /> GitHub
-        </Button>
-      </motion.div>
+      <div className="mt-4 flex gap-3">
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <Button variant="heroOutline" size="sm" asChild>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <ExternalLink size={14} /> GitHub
+            </a>
+          </Button>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <Button variant="hero" size="sm" asChild>
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+              <Globe size={14} /> View Live
+            </a>
+          </Button>
+        </motion.div>
+      </div>
     </motion.div>
   );
 };

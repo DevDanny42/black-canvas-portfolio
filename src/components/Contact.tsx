@@ -71,6 +71,10 @@ const Contact = () => {
                 <a href="https://leetcode.com/dayeshlate" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">leetcode.com/dayeshlate</a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
+                <Twitter size={20} />
+                <a href="https://twitter.com/dayeshlate" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">twitter.com/dayeshlate</a>
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground">
                 <Instagram size={20} />
                 <a href="https://instagram.com/dayeshlate" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">instagram.com/dayeshlate</a>
               </div>

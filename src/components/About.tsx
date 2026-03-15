@@ -25,9 +25,16 @@ const About = () => (
               </span>
             ))}
           </div>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed mb-8">
             I enjoy solving complex problems and continuously improving my development skills.
           </p>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+            <Button variant="hero" size="lg" asChild>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <FileDown size={16} /> View Resume
+              </a>
+            </Button>
+          </motion.div>
         </div>
       </SectionReveal>
     </div>
