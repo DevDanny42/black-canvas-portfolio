@@ -1,4 +1,7 @@
 import SectionReveal from "./SectionReveal";
+import { FileDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const techList = ["Node.js", "React", "TypeScript", "MySQL", "REST APIs", "Docker", "Git & GitHub"];
 
