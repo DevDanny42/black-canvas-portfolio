@@ -1,8 +1,27 @@
 import SectionReveal from "./SectionReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Server, Code2, FileCode, Database, FileSpreadsheet, BrainCircuit, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import type { LucideIcon } from "lucide-react";
+
+const techIcons: Record<string, LucideIcon> = {
+  "React": Code2,
+  "Node.js": Server,
+  "MySQL": Database,
+  "TypeScript": FileCode,
+  "ExcelJS": FileSpreadsheet,
+  "JavaScript": FileCode,
+  "Python": Code2,
+  "Scikit-learn": BrainCircuit,
+  "Pandas": BarChart3,
+};
 
 const projects = [
   {
@@ -40,18 +59,40 @@ const ProjectCard = ({ title, description, tech, videoUrl, index }: typeof proje
     >
       <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-gradient transition-colors">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed mb-4">{description}</p>
-      <div className="flex flex-wrap gap-2 mb-5">
-        {tech.map((t) => (
-          <span key={t} className="px-2 py-1 text-xs rounded bg-secondary/50 text-muted-foreground">{t}</span>
-        ))}
-      </div>
+      <TooltipProvider delayDuration={100}>
+        <div className="flex flex-wrap gap-2 mb-5">
+          {tech.map((t) => {
+            const Icon = techIcons[t];
+            return (
+              <Tooltip key={t}>
+                <TooltipTrigger asChild>
+                  <motion.span
+                    whileHover={{ scale: 1.08 }}
+                    className="px-2 py-1 text-xs rounded bg-secondary/50 text-muted-foreground cursor-default"
+                  >
+                    {t}
+                  </motion.span>
+                </TooltipTrigger>
+                {Icon && (
+                  <TooltipContent
+                    side="top"
+                    className="flex flex-col items-center gap-1.5 px-4 py-3 bg-card border border-border"
+                  >
+                    <Icon size={28} className="text-foreground" />
+                    <span className="text-xs text-muted-foreground">{t}</span>
+                  </TooltipContent>
+                )}
+              </Tooltip>
+            );
+          })}
+        </div>
+      </TooltipProvider>
       <div className="mt-4 rounded-lg overflow-hidden border border-border/20">
         <video
           className="w-full h-auto rounded-lg"
           controls
           muted
           preload="metadata"
-          poster=""
         >
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
