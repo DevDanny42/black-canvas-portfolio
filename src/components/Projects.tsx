@@ -47,7 +47,7 @@ const projects = [
   },
 ];
 
-const ProjectCard = ({ title, description, tech, videoUrl, index }: typeof projects[0] & { index: number }) => {
+const ProjectCard = ({ title, description, tech, videoUrl, liveUrl, index }: typeof projects[0] & { index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
