@@ -9,20 +9,23 @@ const projects = [
     title: "Garage Management System",
     description: "A web-based application designed to manage garage operations including vehicle service tracking, billing, and customer management.",
     tech: ["React", "Node.js", "MySQL", "TypeScript"],
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
   {
     title: "Bank Management App",
     description: "A simple application that stores and manages bank account data with features like add, search, delete, and download records in Excel.",
     tech: ["Node.js", "ExcelJS", "JavaScript"],
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
   {
     title: "Machine Learning Model",
     description: "Developed a machine learning model to analyze data and predict outcomes using classification algorithms.",
     tech: ["Python", "Scikit-learn", "Pandas"],
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
 ];
 
-const ProjectCard = ({ title, description, tech, index }: typeof projects[0] & { index: number }) => {
+const ProjectCard = ({ title, description, tech, videoUrl, index }: typeof projects[0] & { index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -42,7 +45,19 @@ const ProjectCard = ({ title, description, tech, index }: typeof projects[0] & {
           <span key={t} className="px-2 py-1 text-xs rounded bg-secondary/50 text-muted-foreground">{t}</span>
         ))}
       </div>
-      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+      <div className="mt-4 rounded-lg overflow-hidden border border-border/20">
+        <video
+          className="w-full h-auto rounded-lg"
+          controls
+          muted
+          preload="metadata"
+          poster=""
+        >
+          <source src={videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <motion.div className="mt-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
         <Button variant="heroOutline" size="sm">
           <ExternalLink size={14} /> GitHub
         </Button>
