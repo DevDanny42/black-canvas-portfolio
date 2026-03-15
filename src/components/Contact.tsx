@@ -55,12 +55,24 @@ const Contact = () => {
                 <a href="mailto:dayesh@example.com" className="hover:text-foreground transition-colors">dayesh@example.com</a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
+                <Phone size={20} />
+                <a href="tel:+1234567890" className="hover:text-foreground transition-colors">+1 234 567 890</a>
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground">
                 <Github size={20} />
                 <a href="https://github.com/dayeshlate" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">github.com/dayeshlate</a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Linkedin size={20} />
                 <a href="https://linkedin.com/in/dayeshlate" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">linkedin.com/in/dayeshlate</a>
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <Code size={20} />
+                <a href="https://leetcode.com/dayeshlate" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">leetcode.com/dayeshlate</a>
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <Instagram size={20} />
+                <a href="https://instagram.com/dayeshlate" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">instagram.com/dayeshlate</a>
               </div>
             </div>
           </div>
