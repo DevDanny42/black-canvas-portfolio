@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SectionReveal from "./SectionReveal";
 import { Button } from "@/components/ui/button";
-import { Mail, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Github, Linkedin, Send, Phone, Instagram, Code } from "lucide-react";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
