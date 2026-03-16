@@ -29,21 +29,21 @@ const projects = [
     description: "A web-based application designed to manage garage operations including vehicle service tracking, billing, and customer management.",
     tech: ["React", "Node.js", "MySQL", "TypeScript"],
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-    liveUrl: "#",
+    liveUrl: "",
   },
   {
     title: "Bank Management App",
     description: "A simple application that stores and manages bank account data with features like add, search, delete, and download records in Excel.",
     tech: ["Node.js", "ExcelJS", "JavaScript"],
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-    liveUrl: "#",
+    liveUrl: "",
   },
   {
     title: "Machine Learning Model",
     description: "Developed a machine learning model to analyze data and predict outcomes using classification algorithms.",
     tech: ["Python", "Scikit-learn", "Pandas"],
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-    liveUrl: "#",
+    liveUrl: "",
   },
 ];
 
