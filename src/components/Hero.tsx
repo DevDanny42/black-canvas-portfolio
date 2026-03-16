@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
 import ParticlesBackground from "./ParticlesBackground";
+import TerminalAnimation from "./TerminalAnimation";
 
 const Hero = () => {
   return (
