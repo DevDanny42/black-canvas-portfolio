@@ -43,9 +43,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="flex justify-center"
         >
-          <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-secondary border border-border flex items-center justify-center">
-            <span className="text-6xl">👨‍💻</span>
-          </div>
+          <TerminalAnimation />
         </motion.div>
       </div>
     </section>
