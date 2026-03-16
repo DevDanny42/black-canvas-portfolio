@@ -11,39 +11,43 @@ import type { LucideIcon } from "lucide-react";
 
 const skillIcons: Record<string, LucideIcon> = {
   React: Code2,
-  TypeScript: FileCode,
   HTML: FileText,
   CSS: Palette,
+  JavaScript: FileCode,
   Vite: Zap,
+  Java: Code2,
+  "Spring Boot": Server,
   "Node.js": Server,
-  "Express.js": Box,
-  "REST API Development": Globe,
   "Authentication (JWT)": ShieldCheck,
+  "REST API Development": Globe,
   MySQL: Database,
-  "Sequelize ORM": Layers,
+  Supabase: Database,
   Git: GitBranch,
   GitHub: Github,
   Docker: Container,
-  Postman: Send,
-  "VS Code": MonitorSmartphone,
+  Kubernetes: Box,
+  Linux: MonitorSmartphone,
+  GitLab: GitBranch,
+  Jenkins: Layers,
+  GCP: Globe,
 };
 
 const categories = [
   {
     title: "Frontend",
-    skills: ["React", "TypeScript", "HTML", "CSS", "Vite"],
+    skills: ["React", "HTML", "CSS", "JavaScript", "Vite"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express.js", "REST API Development", "Authentication (JWT)"],
+    skills: ["Java", "Spring Boot", "Node.js", "Authentication (JWT)", "REST API Development"],
   },
   {
     title: "Database",
-    skills: ["MySQL", "Sequelize ORM"],
+    skills: ["MySQL", "Supabase"],
   },
   {
     title: "Tools",
-    skills: ["Git", "GitHub", "Docker", "Postman", "VS Code"],
+    skills: ["Git", "GitHub", "Docker", "Kubernetes", "Linux", "GitLab", "Jenkins", "GCP"],
   },
 ];
 
