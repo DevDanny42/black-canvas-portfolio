@@ -1,35 +1,32 @@
 import SectionReveal from "./SectionReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import {
-  Code2, FileCode, FileText, Palette, Zap,
-  Server, Box, Globe, ShieldCheck,
-  Database, Layers,
-  GitBranch, Github, Container, Send, MonitorSmartphone,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
+import { FaReact, FaHtml5, FaCss3Alt, FaJava, FaNodeJs, FaDocker, FaLinux, FaGitAlt, FaGithub, FaGitlab, FaJenkins } from "react-icons/fa";
+import { SiJavascript, SiVite, SiSpringboot, SiJsonwebtokens, SiMysql, SiSupabase, SiKubernetes, SiGooglecloud } from "react-icons/si";
+import { TbApi } from "react-icons/tb";
 
-const skillIcons: Record<string, LucideIcon> = {
-  React: Code2,
-  HTML: FileText,
-  CSS: Palette,
-  JavaScript: FileCode,
-  Vite: Zap,
-  Java: Code2,
-  "Spring Boot": Server,
-  "Node.js": Server,
-  "Authentication (JWT)": ShieldCheck,
-  "REST API Development": Globe,
-  MySQL: Database,
-  Supabase: Database,
-  Git: GitBranch,
-  GitHub: Github,
-  Docker: Container,
-  Kubernetes: Box,
-  Linux: MonitorSmartphone,
-  GitLab: GitBranch,
-  Jenkins: Layers,
-  GCP: Globe,
+const skillIcons: Record<string, IconType> = {
+  React: FaReact,
+  HTML: FaHtml5,
+  CSS: FaCss3Alt,
+  JavaScript: SiJavascript,
+  Vite: SiVite,
+  Java: FaJava,
+  "Spring Boot": SiSpringboot,
+  "Node.js": FaNodeJs,
+  "Authentication (JWT)": SiJsonwebtokens,
+  "REST API Development": TbApi,
+  MySQL: SiMysql,
+  Supabase: SiSupabase,
+  Git: FaGitAlt,
+  GitHub: FaGithub,
+  Docker: FaDocker,
+  Kubernetes: SiKubernetes,
+  Linux: FaLinux,
+  GitLab: FaGitlab,
+  Jenkins: FaJenkins,
+  GCP: SiGooglecloud,
 };
 
 const categories = [
