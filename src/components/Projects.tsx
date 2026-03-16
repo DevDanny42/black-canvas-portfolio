@@ -58,7 +58,7 @@ const ProjectCard = ({ title, description, tech, videoUrl, liveUrl, index }: typ
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.15 }}
       whileHover={{ scale: 1.04, y: -5 }}
-      className="p-6 rounded-lg glass-card group"
+      className="p-6 rounded-lg glass-card group flex flex-col h-full"
     >
       <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-gradient transition-colors">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed mb-4">{description}</p>
@@ -90,7 +90,7 @@ const ProjectCard = ({ title, description, tech, videoUrl, liveUrl, index }: typ
           })}
         </div>
       </TooltipProvider>
-      <div className="mt-4 rounded-lg overflow-hidden border border-border/20">
+      <div className="mt-auto rounded-lg overflow-hidden border border-border/20">
         <video
           className="w-full h-auto rounded-lg"
           controls
@@ -101,7 +101,7 @@ const ProjectCard = ({ title, description, tech, videoUrl, liveUrl, index }: typ
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="mt-4 flex gap-3">
+      <div className="mt-4 flex justify-between items-center">
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
           <Button variant="heroOutline" size="sm" asChild>
             <a href="#" target="_blank" rel="noopener noreferrer">
@@ -109,13 +109,15 @@ const ProjectCard = ({ title, description, tech, videoUrl, liveUrl, index }: typ
             </a>
           </Button>
         </motion.div>
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-          <Button variant="hero" size="sm" asChild>
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-              <Globe size={14} /> View Live
-            </a>
-          </Button>
-        </motion.div>
+        {liveUrl && (
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+            <Button variant="heroOutline" size="sm" asChild>
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+                <Globe size={14} /> View Live
+              </a>
+            </Button>
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );
