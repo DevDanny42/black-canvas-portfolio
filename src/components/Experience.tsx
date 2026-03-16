@@ -21,7 +21,7 @@ const Experience = () => {
           className="relative pl-8 border-l border-border max-w-2xl"
         >
           <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-secondary border border-border flex items-center justify-center">
-            <Briefcase size={12} className="text-muted-foreground" />
+            <Briefcase size={16} className="text-muted-foreground" />
           </div>
           <h3 className="text-xl font-semibold text-foreground">Intern Software Developer</h3>
           <p className="text-muted-foreground text-sm mb-4">Tech Company (Dummy) · 2025 - Present</p>
