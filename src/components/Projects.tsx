@@ -8,16 +8,16 @@ import { FaReact, FaNodeJs, FaPython } from "react-icons/fa";
 import { SiTypescript, SiJavascript, SiMysql, SiScikitlearn, SiPandas } from "react-icons/si";
 import { DiNodejsSmall } from "react-icons/di";
 
-const techIcons: Record<string, LucideIcon> = {
-  "React": Code2,
-  "Node.js": Server,
-  "MySQL": Database,
-  "TypeScript": FileCode,
-  "ExcelJS": FileSpreadsheet,
-  "JavaScript": FileCode,
-  "Python": Code2,
-  "Scikit-learn": BrainCircuit,
-  "Pandas": BarChart3,
+const techIcons: Record<string, IconType> = {
+  "React": FaReact,
+  "Node.js": FaNodeJs,
+  "MySQL": SiMysql,
+  "TypeScript": SiTypescript,
+  "ExcelJS": DiNodejsSmall,
+  "JavaScript": SiJavascript,
+  "Python": FaPython,
+  "Scikit-learn": SiScikitlearn,
+  "Pandas": SiPandas,
 };
 
 const projects = [
