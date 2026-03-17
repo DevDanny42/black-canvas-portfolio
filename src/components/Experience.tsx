@@ -2,6 +2,7 @@ import SectionReveal from "./SectionReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Trophy, MapPin, Users, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const hackathons = [
   {
