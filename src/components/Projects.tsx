@@ -1,15 +1,12 @@
 import SectionReveal from "./SectionReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Globe, Server, Code2, FileCode, Database, FileSpreadsheet, BrainCircuit, BarChart3 } from "lucide-react";
+import { ExternalLink, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
+import { FaReact, FaNodeJs, FaPython } from "react-icons/fa";
+import { SiTypescript, SiJavascript, SiMysql, SiScikitlearn, SiPandas } from "react-icons/si";
+import { DiNodejsSmall } from "react-icons/di";
 
 const techIcons: Record<string, LucideIcon> = {
   "React": Code2,
