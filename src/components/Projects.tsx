@@ -1,26 +1,23 @@
 import SectionReveal from "./SectionReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Globe, Server, Code2, FileCode, Database, FileSpreadsheet, BrainCircuit, BarChart3 } from "lucide-react";
+import { ExternalLink, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
+import { FaReact, FaNodeJs, FaPython } from "react-icons/fa";
+import { SiTypescript, SiJavascript, SiMysql, SiScikitlearn, SiPandas } from "react-icons/si";
+import { DiNodejsSmall } from "react-icons/di";
 
-const techIcons: Record<string, LucideIcon> = {
-  "React": Code2,
-  "Node.js": Server,
-  "MySQL": Database,
-  "TypeScript": FileCode,
-  "ExcelJS": FileSpreadsheet,
-  "JavaScript": FileCode,
-  "Python": Code2,
-  "Scikit-learn": BrainCircuit,
-  "Pandas": BarChart3,
+const techIcons: Record<string, IconType> = {
+  "React": FaReact,
+  "Node.js": FaNodeJs,
+  "MySQL": SiMysql,
+  "TypeScript": SiTypescript,
+  "ExcelJS": DiNodejsSmall,
+  "JavaScript": SiJavascript,
+  "Python": FaPython,
+  "Scikit-learn": SiScikitlearn,
+  "Pandas": SiPandas,
 };
 
 const projects = [
@@ -62,34 +59,20 @@ const ProjectCard = ({ title, description, tech, videoUrl, liveUrl, index }: typ
     >
       <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-gradient transition-colors">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed mb-4">{description}</p>
-      <TooltipProvider delayDuration={100}>
-        <div className="flex flex-wrap gap-2 mb-5">
+      <div className="mb-5">
+        <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">Technologies Used</p>
+        <div className="flex flex-wrap gap-2">
           {tech.map((t) => {
             const Icon = techIcons[t];
             return (
-              <Tooltip key={t}>
-                <TooltipTrigger asChild>
-                  <motion.span
-                    whileHover={{ scale: 1.08 }}
-                    className="px-2 py-1 text-xs rounded bg-secondary/50 text-muted-foreground cursor-default"
-                  >
-                    {t}
-                  </motion.span>
-                </TooltipTrigger>
-                {Icon && (
-                  <TooltipContent
-                    side="top"
-                    className="flex flex-col items-center gap-1.5 px-4 py-3 bg-card border border-border"
-                  >
-                    <Icon size={28} className="text-foreground" />
-                    <span className="text-xs text-muted-foreground">{t}</span>
-                  </TooltipContent>
-                )}
-              </Tooltip>
+              <span key={t} className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-md bg-secondary/50 text-muted-foreground border border-border/50">
+                {Icon && <Icon size={13} />}
+                {t}
+              </span>
             );
           })}
         </div>
-      </TooltipProvider>
+      </div>
       <div className="mt-auto rounded-lg overflow-hidden border border-border/20">
         <video
           className="w-full h-auto rounded-lg"
