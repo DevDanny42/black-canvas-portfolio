@@ -2,6 +2,7 @@ import SectionReveal from "./SectionReveal";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Trophy, MapPin, Users, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const hackathons = [
   {
@@ -52,14 +53,15 @@ const Experience = () => {
                 <span className="flex items-center gap-1"><MapPin size={14} /> {hack.venue}</span>
                 <span className="flex items-center gap-1"><Users size={14} /> {hack.organizer}</span>
               </div>
-              <a
-                href={hack.certificateLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
-              >
-                <ExternalLink size={14} /> View Certificate
-              </a>
+              <Button variant="outline" size="sm" asChild className="mt-1 w-fit">
+                <a
+                  href={hack.certificateLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ExternalLink size={14} /> View Certificate
+                </a>
+              </Button>
             </motion.div>
           ))}
         </div>
