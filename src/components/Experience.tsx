@@ -32,7 +32,8 @@ const Experience = () => {
     <section id="experience" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
         <SectionReveal>
-          <h2 className="text-3xl font-bold mb-10">Finalist at Hackathons</h2>
+          <h2 className="text-3xl font-bold mb-2">Experience</h2>
+          <p className="text-lg text-muted-foreground mb-10">Finalist at Hackathons</p>
         </SectionReveal>
         <div ref={ref} className="space-y-12">
           {hackathons.map((hack, i) => (
